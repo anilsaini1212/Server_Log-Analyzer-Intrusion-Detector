@@ -17,7 +17,6 @@ Built as part of my [DevOps learning series on LinkedIn](https://www.linkedin.co
 - Linux server (tested on Amazon Linux 2023)
 - bash
 - journalctl (comes with systemd)
-- curl (for Telegram alerts)
   
 ## Quick Start
 
@@ -147,7 +146,7 @@ sort | uniq -c | sort -rn
 ## ⏰ Automate with Cron
 
 Run every morning at 8am:
-crontab -e
+sudo crontab -e   (root crontab, so the script can read journald without a password prompt)
 
 Add this line:
 0 8 * * * /path/to/log-analyzer.sh 24
